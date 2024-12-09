@@ -30,7 +30,7 @@ try {
   var xhr = new XMLHttpRequest();
   xhr.open(
     "GET",
-    "https://connect.engagetoq.in/api/Widgets/get" + widgetId,
+    "https://connect.engagetoq.in/api/Widgets/get?id=" + widgetId,
     true
   );
   // xhr.open("GET", "http://localhost:5000/widget-details/" + widgetId, true);
