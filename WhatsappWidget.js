@@ -50,11 +50,11 @@ try {
 
       s.onload = function () {
         console.log("Loaded script");
-        console.log({ aisensyWidgetOptions });
+        
 
-        if (aisensyWidgetOptions != null) {
-          console.log({ aisensyWidgetOptions });
-          window.CreateWhatsAppButtonAndWidget(aisensyWidgetOptions);
+        if (engagetoWidgetOptions != null) {
+         
+          window.CreateWhatsAppButtonAndWidget(engagetoWidgetOptions);
         }
 
         // Register event listener for url change
@@ -81,8 +81,8 @@ try {
         // Listen for url change
         window.addEventListener("locationchange", () => {
           console.log("Location changed");
-          if (aisensyWidgetOptions != null) {
-            window.CreateWhatsAppButtonAndWidget({ ...aisensyWidgetOptions });
+          if (engagetoWidgetOptions != null) {
+            window.CreateWhatsAppButtonAndWidget({ ...engagetoWidgetOptions });
           }
         });
       };
