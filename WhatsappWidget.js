@@ -41,9 +41,6 @@ try {
       var data = JSON.parse(this.responseText);
       console.log(data);
       if (data.phoneNumber) {
-        engagetoLink = data;
-      }
-      if (engagetoLink != null) {
         engagetoWidgetOptions = {
           phoneNumber: engagetoLink?.phoneNumber,
           ctaText: engagetoLink?.ctaText,
