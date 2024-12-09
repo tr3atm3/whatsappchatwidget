@@ -62,6 +62,7 @@ try {
           startChat: engagetoLink?.startChat,
           urlFields: engagetoLink?.urlFields,
         };
+        console.log(engagetoLink, engagetoWidgetOptions);
       } else {
         // Req successful but empty data is returned
         throw new Error("Invalid widget details");
