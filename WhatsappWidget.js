@@ -40,34 +40,30 @@ try {
     if (this.status === 200) {
       var data = JSON.parse(this.responseText);
       console.log(data);
-      if (data.link) {
-        aisensyLink = data.link;
+      if (data.phoneNumber) {
+        engagetoLink = data;
       }
-      if (aisensyLink != null) {
-        var btn = aisensyLink.whatsappBtnSettings;
-        aisensyWidgetOptions = {
-          linkid: aisensyLink.linkId,
-          phoneNumber: aisensyLink.phoneNumber,
-          variant: btn.variant,
-          btnBackground: btn.btnBackground,
-          btnCTA: btn.btnCTA,
-          mb: btn.mb,
-          ml: btn.ml,
-          mr: btn.mr,
-          borderRadius: btn.borderRadius,
-          prefilledMsg: aisensyLink.prefilledMsg,
-          position: btn.position,
-          brandName: btn.brandName,
-          brandSub: btn.brandSub,
-          brandColor: btn.brandColor,
-          brandImgUrl: btn.brandImgUrl,
-          widgetBtnCTA: btn.widgetBtnCTA,
-          openWidgetByDefault: btn.openWidgetByDefault,
-          openWidgetSessionWindow: btn.openWidgetSessionWindow,
-          onscreenMsg: btn.onscreenMsg,
-          onscreenImg: "",
-          widgetOnMobile: btn.widgetOnMobile,
-          personalizedUrls: btn.personalizedUrls,
+      if (engagetoLink != null) {
+        engagetoWidgetOptions = {
+          phoneNumber: engagetoLink?.phoneNumber,
+          ctaText: engagetoLink?.ctaText,
+          buttonBackground: engagetoLink?.buttonBackground,
+          marginBottom: engagetoLink?.marginBottom,
+          marginLeft: engagetoLink?.marginLeft,
+          marginRight: engagetoLink?.marginRight,
+          borderRadius: engagetoLink?.borderRadius,
+          defaultMessage: engagetoLink?.defaultMessage,
+          position: engagetoLink?.position,
+          brandName: engagetoLink?.brandName,
+          brandSubtitle: engagetoLink?.brandSubtitle,
+          brandColor: engagetoLink?.brandColor,
+          widgetCtaText: engagetoLink?.widgetCtaText,
+          brandImageUrl: engagetoLink?.brandImageUrl,
+          defaultOnScreenMessage: engagetoLink?.defaultOnScreenMessage,
+          openWidgetOnMobileScreen: engagetoLink?.openWidgetOnMobileScreen,
+          openWidgetByDefault: engagetoLink?.openWidgetByDefault,
+          startChat: engagetoLink?.startChat,
+          urlFields: engagetoLink?.urlFields,
         };
       } else {
         // Req successful but empty data is returned
