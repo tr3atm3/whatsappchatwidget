@@ -118,7 +118,7 @@ function CreateWhatsAppButtonAndWidget(options) {
       // Escape { & } for reg exp
 
       const paramPattern = p.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-      config.onscreenMsg = config.onscreenMsg.replace(
+      config.defaultOnScreenMessage = config.defaultOnScreenMessage.replace(
         new RegExp(`${paramPattern}`, "g"),
         params[p]
       );
