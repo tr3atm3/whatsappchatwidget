@@ -41,28 +41,8 @@ try {
       var data = JSON.parse(this.responseText);
       console.log(data);
       if (data.phoneNumber) {
-        engagetoWidgetOptions = {
-          phoneNumber: engagetoLink?.phoneNumber,
-          ctaText: engagetoLink?.ctaText,
-          buttonBackground: engagetoLink?.buttonBackground,
-          marginBottom: engagetoLink?.marginBottom,
-          marginLeft: engagetoLink?.marginLeft,
-          marginRight: engagetoLink?.marginRight,
-          borderRadius: engagetoLink?.borderRadius,
-          defaultMessage: engagetoLink?.defaultMessage,
-          position: engagetoLink?.position,
-          brandName: engagetoLink?.brandName,
-          brandSubtitle: engagetoLink?.brandSubtitle,
-          brandColor: engagetoLink?.brandColor,
-          widgetCtaText: engagetoLink?.widgetCtaText,
-          brandImageUrl: engagetoLink?.brandImageUrl,
-          defaultOnScreenMessage: engagetoLink?.defaultOnScreenMessage,
-          openWidgetOnMobileScreen: engagetoLink?.openWidgetOnMobileScreen,
-          openWidgetByDefault: engagetoLink?.openWidgetByDefault,
-          startChat: engagetoLink?.startChat,
-          urlFields: engagetoLink?.urlFields,
-        };
-        console.log(engagetoLink, engagetoWidgetOptions);
+        engagetoWidgetOptions =data
+        console.log( engagetoWidgetOptions);
       } else {
         // Req successful but empty data is returned
         throw new Error("Invalid widget details");
