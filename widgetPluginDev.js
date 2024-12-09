@@ -105,7 +105,7 @@ function CreateWhatsAppButtonAndWidget(options) {
   let params = {};
   let matchAt = null;
   const url = window.location.href;
-  const pUrls = config.personalizedUrls;
+  const pUrls = config.urlFields;
 
   // Replace page_url & page_title from default onscreen msg
   if (true) {
