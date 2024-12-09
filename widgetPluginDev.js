@@ -71,30 +71,31 @@ function CreateWhatsAppButtonAndWidget(options) {
 
   const config = {
     // dev mode is for widget preview while generating the widget on create.aisensy.com
-    env: options.env || "",
-    linkid: options.linkid || "",
+    // env: options.env || "",
+    // linkid: options.linkid || "",
     // Btn & Widget options
-    phoneNumber: options.phoneNumber || "+919999999999",
-    variant: options.variant || "WhatsAppBtnAndChatWidget",
-    btnBackground: options.btnBackground || "#4dc247",
-    btnCTA: options.btnCTA || "",
-    mb: options.mb || "30",
-    ml: options.ml || "30",
-    mr: options.mr || "30",
-    borderRadius: options.borderRadius || "24",
-    prefilledMsg: options.prefilledMsg || "Hi",
-    position: options.position || "Bottom-Right",
-    brandName: options.brandName || "AiSensy",
-    brandSub: options.brandSub || "online",
-    brandColor: options.brandColor || "#0A5F54",
-    brandImgUrl: options.brandImgUrl || brandImage,
-    widgetBtnCTA: options.widgetBtnCTA || "Start chat",
-    openWidgetByDefault: options.openWidgetByDefault || "true",
-    openWidgetSessionWindow: options.openWidgetSessionWindow || "ALWAYS",
-    onscreenMsg: options.onscreenMsg || "Hi,\nHow can I help you ?",
-    onscreenImg: options.onscreenImg || "",
-    widgetOnMobile: options.widgetOnMobile || "true",
-    personalizedUrls: options.personalizedUrls || [],
+    // phoneNumber: options.phoneNumber || "+919999999999",
+    // variant: options.variant || "WhatsAppBtnAndChatWidget",
+    // btnBackground: options.btnBackground || "#4dc247",
+    // btnCTA: options.btnCTA || "",
+    // mb: options.mb || "30",
+    // ml: options.ml || "30",
+    // mr: options.mr || "30",
+    // borderRadius: options.borderRadius || "24",
+    // prefilledMsg: options.prefilledMsg || "Hi",
+    // position: options.position || "Bottom-Right",
+    // brandName: options.brandName || "AiSensy",
+    // brandSub: options.brandSub || "online",
+    // brandColor: options.brandColor || "#0A5F54",
+    // brandImgUrl: options.brandImgUrl || brandImage,
+    // widgetBtnCTA: options.widgetBtnCTA || "Start chat",
+    // openWidgetByDefault: options.openWidgetByDefault || "true",
+    // openWidgetSessionWindow: options.openWidgetSessionWindow || "ALWAYS",
+    // onscreenMsg: options.onscreenMsg || "Hi,\nHow can I help you ?",
+    // onscreenImg: options.onscreenImg || "",
+    // widgetOnMobile: options.widgetOnMobile || "true",
+    // personalizedUrls: options.personalizedUrls || [],
+    ...options,
   };
 
   console.log({ config });
@@ -211,11 +212,11 @@ function CreateWhatsAppButtonAndWidget(options) {
 			border-radius: ${config.borderRadius}px !important;
 			transition: all 2s linear !important;
 			position: fixed !important;
-			bottom: ${config.mb}px !important;
+			bottom: ${config.marginBottom}px !important;
 			${
         config.position === "Bottom-Right"
-          ? "right:" + config.mr
-          : "left:" + config.ml
+          ? "right:" + config.marginRight
+          : "left:" + config.marginLeft
       }px !important;
 			display: flex !important;
 			flex-direction: column !important;
@@ -238,13 +239,13 @@ function CreateWhatsAppButtonAndWidget(options) {
 			letter-spacing: .25px !important;
 			transition: all .08s linear !important;
 			cursor: pointer !important;
-			padding-right: ${config.btnCTA ? "15px" : "5px"} !important;
-			padding-left: ${config.btnCTA ? "10px" : "5px"} !important;
+			padding-right: ${config.ctaText ? "15px" : "5px"} !important;
+			padding-left: ${config.ctaText ? "10px" : "5px"} !important;
 			padding-top: 5px !important;
 			padding-bottom: 5px !important;
 			font-size: 16px !important;
 			margin-top: 15px !important;
-			background-color: ${config.btnBackground};
+			background-color: ${config.buttonBackground};
 			box-shadow: rgb(0 0 0 / 20%) 0px 0px 0.428571rem 0px !important;
 		}
 		.df-btn-text-icon-only {
@@ -347,7 +348,7 @@ function CreateWhatsAppButtonAndWidget(options) {
 			width: 100% !important;
 			padding: 10px 0px !important;
 			border-radius: 50px !important;
-			background-color: ${config.btnBackground};
+			background-color: ${config.buttonBackground};
 			display: flex !important;
 			justify-content: center !important;
 			align-items: center !important;
@@ -487,12 +488,12 @@ function CreateWhatsAppButtonAndWidget(options) {
 				<div class="df-content-topbar">
 					<div class="df-brand-img">
 						<img src="${
-              config.brandImgUrl
+              config.brandImageUrl
             }" height="100%" width="100%" style="border-radius: 50%;" alt="img"/>
 					</div>
 					<div style="flex-grow: 1;">
 						<div class="df-brand-name">${config.brandName}</div>
-						<div class="df-brand-sub">${config.brandSub}</div>
+						<div class="df-brand-sub">${config.brandSubtitle}</div>
 					</div>
 					<div onclick="dfToggle()">
 						${cancelSvg}
@@ -503,13 +504,17 @@ function CreateWhatsAppButtonAndWidget(options) {
 						<div class="df-window-msg-cont-brandname">
 							${config.brandName}
 						</div>
-						${config.onscreenImg || false ? `<div class="df-onscreen-img"></div>` : ""}
-						<pre class="df-window-msg">${customMsg || config.onscreenMsg}</pre>
+						${
+              config.defaultOnScreenMessage || false
+                ? `<div class="df-onscreen-img"></div>`
+                : ""
+            }
+						<pre class="df-window-msg">${customMsg || config.defaultOnScreenMessage}</pre>
 					</div>
 				</div>
 				<div class="df-content-bottombar">
 					<div class="df-bottombar-btn" onclick="goToLink()">
-						${config.widgetBtnCTA}
+						${config.widgetCtaText}
 					</div>
 					<div class="df-bottombar-branding">
 						<img 
@@ -525,7 +530,7 @@ function CreateWhatsAppButtonAndWidget(options) {
 				</div>
 			</div>
 			<div class="df-btn-text" onclick="dfToggle()">
-				${svgIcon} ${config.btnCTA}
+				${svgIcon} ${config.widgetCtaText}
 			</div>
 		</div>
 	`;
@@ -547,7 +552,7 @@ function CreateWhatsAppButtonAndWidget(options) {
 
   const width = window.innerWidth;
   // Used to control widget open behaviour
-  const mobile = width < 700 && config.widgetOnMobile == "false";
+  const mobile = width < 700 && config.openWidgetOnMobileScreen === "false";
 
   // Handle open & close of widget
   window.dfToggle = (dev = false) => {
