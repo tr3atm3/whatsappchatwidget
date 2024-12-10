@@ -1,13 +1,10 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-    console.log(config)
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
     );
-
-    console.log(currentDomain, isSourceDomain)
 
     const createButton = () => {
       const button = document.createElement("button");
@@ -63,8 +60,8 @@
       brandInfo.style.alignItems = "center";
 
       const brandImage = document.createElement("img");
-      brandImage.src = isSourceDomain
-        ? config?.urlFields?.brandImageUrl || config.brandImageUrl || ""
+      brandImage.src = isSourceDomain?.id
+        ? isSourceDomain?.brandImageUrl || config.brandImageUrl || ""
         : config.brandImageUrl || "";
       brandImage.alt = config.brandName || "Brand Logo";
       brandImage.style.width = "32px";
@@ -115,8 +112,8 @@
       messageBubble.style.marginBottom = "10px";
 
       const message = document.createElement("span");
-      message.innerHTML = isSourceDomain
-        ? config.urlFields.onScreenMessage.replace(/\n/g, "<br>") ||
+      message.innerHTML = isSourceDomain?.id
+        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
           config.defaultOnScreenMessage.replace(/\n/g, "<br>")
         : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
       messageBubble.appendChild(message);
@@ -140,7 +137,7 @@
         window.open(
           `https://api.whatsapp.com/send?phone=${config.phoneNumber}&text=${
             isSourceDomain
-              ? config.urlFields.preFilledMessage || config.defaultMessage
+              ? isSourceDomain?.preFilledMessage || config.defaultMessage
               : config.defaultMessage
           }`,
           "_blank"
