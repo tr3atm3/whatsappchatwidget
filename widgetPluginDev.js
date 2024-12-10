@@ -33,7 +33,7 @@
       text.innerText = config.ctaText;
       button.appendChild(text);
 
-      button.addEventListener("click", () => { togglePopup
+      button.addEventListener("click", () => { togglePopup()
                                                clearTimeout(toggleChatPopupTimer)
                                              });
       return button;
