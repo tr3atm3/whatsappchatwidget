@@ -65,7 +65,7 @@
 
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
-      brandText.style.flexDirection = "row";
+      brandText.style.flexDirection = "column";
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
