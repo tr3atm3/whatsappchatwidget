@@ -1,10 +1,13 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
+    console.log(config)
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
     );
+
+    console.log(currentDomain, isSourceDomain)
 
     const createButton = () => {
       const button = document.createElement("button");
