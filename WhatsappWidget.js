@@ -8,7 +8,8 @@ try {
   }
   // console.log("Loading script");
   const s = document.createElement("script");
-  s.src = "https://dev-engageto.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui.js";
+  s.src =
+    "https://dev-engageto.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui.js";
   // s.src = "http://localhost:8000/widget-plugin-dev.js";
   s.type = "text/javascript";
   s.async = true;
@@ -24,8 +25,8 @@ try {
   document.getElementsByTagName("head")[0].appendChild(link);
 
   // Fetch widget details
-  var aisensyLink = null;
-  var aisensyWidgetOptions = null;
+
+  var engagetoWidgetOptions = null;
 
   var xhr = new XMLHttpRequest();
   xhr.open(
@@ -41,8 +42,8 @@ try {
       var data = JSON.parse(this.responseText);
       console.log(data);
       if (data.phoneNumber) {
-        engagetoWidgetOptions =data
-        console.log( engagetoWidgetOptions);
+        engagetoWidgetOptions = data;
+        console.log(engagetoWidgetOptions);
       } else {
         // Req successful but empty data is returned
         throw new Error("Invalid widget details");
@@ -50,10 +51,8 @@ try {
 
       s.onload = function () {
         console.log("Loaded script");
-        
 
         if (engagetoWidgetOptions != null) {
-         
           window.CreateWhatsAppButtonAndWidget(engagetoWidgetOptions);
         }
 
