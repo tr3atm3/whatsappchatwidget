@@ -1,9 +1,7 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-    setTimeout(() => {
-      isOpen = true;
-    }, 5000);
+    
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
@@ -35,7 +33,9 @@
       text.innerText = config.ctaText;
       button.appendChild(text);
 
-      button.addEventListener("click", togglePopup);
+      button.addEventListener("click", () => { togglePopup
+                                               clearTimeout(toggleChatPopupTimer)
+                                             });
       return button;
     };
 
@@ -165,6 +165,9 @@
       isOpen = !isOpen;
       render();
     };
+    var toggleChatPopupTimer = setTimeout(() => {
+     togglePopup()
+    }, 5000);
 
     const render = () => {
       const existingButton = document.getElementById("chat-popup-button");
