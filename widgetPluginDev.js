@@ -1,7 +1,7 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-
+    console.log(config);
     const createButton = () => {
       const button = document.createElement("button");
       button.style.position = "fixed";
@@ -126,7 +126,7 @@
       startButton.style.cursor = "pointer";
       startButton.addEventListener("click", () => {
         window.open(
-          `https://api.whatsapp.com/send?phone=${config.countryCode}${config.phoneNumber}&text=${config.defaultMessage}`,
+          `https://api.whatsapp.com/send?phone=${config.phoneNumber}&text=${config.defaultMessage}`,
           "_blank"
         );
       });
