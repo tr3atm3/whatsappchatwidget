@@ -41,7 +41,7 @@
       popup.style.borderRadius = "10px";
       popup.style.overflow = "hidden";
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-      popup.style.backgroundColor = "white";
+      popup.style.backgroundColor = "#92AoAD";
       popup.style.zIndex = "1000";
 
       const header = document.createElement("div");
@@ -65,7 +65,7 @@
 
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
-      brandText.style.flexDirection = "column";
+      brandText.style.flexDirection = "row";
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
@@ -112,7 +112,7 @@
       body.appendChild(messageBubble);
 
       const footer = document.createElement("div");
-      footer.style.padding = "10px";
+      footer.style.padding = "10px 10px 4px 10px";
       footer.style.textAlign = "center";
 
       const startButton = document.createElement("button");
