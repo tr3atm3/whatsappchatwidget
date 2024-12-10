@@ -10,7 +10,7 @@ try {
   const s = document.createElement("script");
   s.src =
     "https://tr3atm3.github.io/whatsappchatwidget/widgetPluginDev.js";
-  // s.src = "http://localhost:8000/widget-plugin-dev.js";
+  // s.src = "https://dev-engageto.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui.js";
   s.type = "text/javascript";
   s.async = true;
   s.id = "df-script";
