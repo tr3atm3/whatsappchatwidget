@@ -126,7 +126,7 @@
       startButton.style.cursor = "pointer";
       startButton.addEventListener("click", () => {
         window.open(
-          `https://api.whatsapp.com/send?phone=${config.phoneNumber}`,
+          `https://api.whatsapp.com/send?phone=+91${config.phoneNumber}`,
           "_blank"
         );
       });
