@@ -41,7 +41,7 @@
       popup.style.borderRadius = "10px";
       popup.style.overflow = "hidden";
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-      popup.style.backgroundColor = "#92AoAD";
+      popup.style.backgroundColor = "#E5E5E5";
       popup.style.zIndex = "1000";
 
       const header = document.createElement("div");
@@ -112,7 +112,7 @@
       body.appendChild(messageBubble);
 
       const footer = document.createElement("div");
-      footer.style.padding = "10px 10px 4px 10px";
+      footer.style.padding = "10px";
       footer.style.textAlign = "center";
 
       const startButton = document.createElement("button");
@@ -133,6 +133,7 @@
 
       const poweredBy = document.createElement("p");
       poweredBy.innerText = `⚡ by Engageto`;
+      poweredBy.style.margin = "5px";
 
       footer.appendChild(startButton);
       footer.appendChild(poweredBy);
