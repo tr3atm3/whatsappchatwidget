@@ -5,12 +5,7 @@
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
     )[0];
-    console.log(currentDomain)
-    console.log(isSourceDomain)
-    console.log(isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
-          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
-        : config.defaultOnScreenMessage.replace(/\n/g, "<br>"))
+    
 
     const createButton = () => {
       const button = document.createElement("button");
