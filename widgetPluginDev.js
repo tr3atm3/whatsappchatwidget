@@ -1,7 +1,7 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-    console.log(config);
+
     const createButton = () => {
       const button = document.createElement("button");
       button.style.position = "fixed";
@@ -65,7 +65,7 @@
 
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
-      brandText.style.flexDirection = "column";
+      brandText.style.flexDirection = "row";
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
