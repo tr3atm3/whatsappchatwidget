@@ -1,6 +1,9 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
+    setTimeout(() => {
+      isOpen = true;
+    }, 5000);
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
