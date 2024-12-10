@@ -6,7 +6,8 @@
       const button = document.createElement("button");
       button.style.position = "fixed";
       button.style.bottom = "20px";
-      button.style[config.position === "bottom-left" ? "left" : "right"] = "20px";
+      button.style[config.position === "bottom-left" ? "left" : "right"] =
+        "20px";
       button.style.borderRadius = `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
@@ -34,7 +35,8 @@
       const popup = document.createElement("div");
       popup.style.position = "fixed";
       popup.style.bottom = "80px";
-      popup.style[config.position === "bottom-left" ? "left" : "right"] = "20px";
+      popup.style[config.position === "bottom-left" ? "left" : "right"] =
+        "20px";
       popup.style.width = "300px";
       popup.style.borderRadius = "10px";
       popup.style.overflow = "hidden";
@@ -62,6 +64,8 @@
       brandImage.style.marginRight = "8px";
 
       const brandText = document.createElement("div");
+      brandText.style.display = "flex";
+      brandText.style.flexDirection = "row";
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
@@ -122,12 +126,16 @@
       startButton.style.cursor = "pointer";
       startButton.addEventListener("click", () => {
         window.open(
-          `https://api.whatsapp.com/send?phone=${config.urlFields.phone}`,
+          `https://api.whatsapp.com/send?phone=${config.phoneNumber}`,
           "_blank"
         );
       });
 
+      const poweredBy = document.createElement("p");
+      poweredBy.innerText = `⚡ by Engageto`;
+
       footer.appendChild(startButton);
+      footer.appendChild(poweredBy);
 
       popup.appendChild(header);
       popup.appendChild(body);
