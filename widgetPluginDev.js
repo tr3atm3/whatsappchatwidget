@@ -1,12 +1,11 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-    
+
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
     )[0];
-    
 
     const createButton = () => {
       const button = document.createElement("button");
@@ -20,14 +19,17 @@
       button.style.padding = "10px 20px";
       button.style.display = "flex";
       button.style.alignItems = "center";
-      button.style.gap = "10px";
-      button.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+      button.style.gap = "15px";
+      button.style.fontSize = "16px";
       button.style.cursor = "pointer";
       button.style.zIndex = "1000";
+      button.style.border = "none";
+      button.style.outline = "none";
+      button.style.fontWeight = "bold";
 
       const icon = document.createElement("span");
       const svg = `
-  <svg fill="#ffffff" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52 52" xml:space="preserve">
+  <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 52 52" xml:space="preserve">
     <g>
         <g>
             <path d="M26,0C11.663,0,0,11.663,0,26c0,4.891,1.359,9.639,3.937,13.762C2.91,43.36,1.055,50.166,1.035,50.237
@@ -49,19 +51,18 @@
     </g>
 </svg>
 `;
-      
-      
-     
-      icon.innerHTML = svg; 
+
+      icon.innerHTML = svg;
       button.appendChild(icon);
 
       const text = document.createElement("span");
       text.innerText = config.ctaText;
       button.appendChild(text);
 
-      button.addEventListener("click", () => { togglePopup()
-                                               clearTimeout(toggleChatPopupTimer)
-                                             });
+      button.addEventListener("click", () => {
+        togglePopup();
+        clearTimeout(toggleChatPopupTimer);
+      });
       return button;
     };
 
@@ -192,7 +193,7 @@
       render();
     };
     var toggleChatPopupTimer = setTimeout(() => {
-     togglePopup()
+      togglePopup();
     }, 5000);
 
     const render = () => {
