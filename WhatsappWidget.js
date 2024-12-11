@@ -7,10 +7,10 @@ try {
     throw new Error("Widget is invalid");
   }
   // console.log("Loading script");
-  const s = document.createElement("script");
-  s.src =
-    "https://tr3atm3.github.io/whatsappchatwidget/widgetPluginDev.js";
-  // s.src = "https://dev-engageto.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui.js";
+  // const s = document.createElement("script");
+  // s.src =
+  //   "https://tr3atm3.github.io/whatsappchatwidget/widgetPluginDev.js";
+  s.src = "https://dev-engageto.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui.js";
   s.type = "text/javascript";
   s.async = true;
   s.id = "df-script";
