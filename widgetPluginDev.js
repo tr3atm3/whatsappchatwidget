@@ -137,7 +137,8 @@
       body.style.height = "200px";
       body.style.overflowY = "auto";
       body.style.padding = "10px";
-      body.style.backgroundImage = 'url("/images/whatsappBG.jpg")';
+      body.style.backgroundImage =
+        'url("https://dev-engageto.s3.ap-south-1.amazonaws.com/0173161e-5ae6-4229-829c-2420e4e81f3f_12/11/2024%2006:58:52.jpg")';
       body.style.backgroundSize = "cover";
 
       const messageBubble = document.createElement("div");
