@@ -26,7 +26,29 @@
       button.style.zIndex = "1000";
 
       const icon = document.createElement("span");
-      icon.innerText = "💬"; // Replace with any WhatsApp icon or emoji.
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="100"
+        height="100"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H6l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"
+          fill="#007AFF"
+        />
+      </svg>;
+      const imgElement = document.createElement("img");
+
+      imgElement.src = "chat-bubble.svg";
+      imgElement.alt = "Chat Bubble Icon";
+      imgElement.width = 100;
+      imgElement.height = 100;
+
+      
+      icon.appendChild(imgElement);
+      
+     
+      //icon.innerText = "💬"; 
       button.appendChild(icon);
 
       const text = document.createElement("span");
