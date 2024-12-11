@@ -52,7 +52,7 @@
       
       
      
-      icon.innerHtml = svg; 
+      icon.innerHTML = svg; 
       button.appendChild(icon);
 
       const text = document.createElement("span");
