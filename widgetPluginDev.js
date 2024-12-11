@@ -141,7 +141,7 @@
         'url("https://dev-engageto.s3.ap-south-1.amazonaws.com/0173161e-5ae6-4229-829c-2420e4e81f3f_12/11/2024%2006:58:52.jpg")';
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
-      body.style.opacity = "0.7";
+      body.style.opacity = "0.5";
 
       const messageBubble = document.createElement("div");
       messageBubble.style.backgroundColor = "white";
