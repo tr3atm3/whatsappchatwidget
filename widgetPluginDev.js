@@ -16,10 +16,10 @@
       button.style.borderRadius = `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
-      button.style.padding = "10px";
+      button.style.padding = "5px 15px";
       button.style.display = "flex";
       button.style.alignItems = "center";
-      button.style.gap = "5px 15px";
+      button.style.gap = "10px";
       button.style.fontSize = "16px";
       button.style.cursor = "pointer";
       button.style.zIndex = "1000";
