@@ -19,15 +19,16 @@
       button.style.padding = "10px";
       button.style.display = "flex";
       button.style.alignItems = "center";
-      button.style.gap = "15px";
+      button.style.gap = "5px 15px";
       button.style.fontSize = "16px";
       button.style.cursor = "pointer";
       button.style.zIndex = "1000";
       button.style.border = "none";
       button.style.outline = "none";
-      button.style.fontWeight = "bold";
 
       const icon = document.createElement("span");
+      icon.style.margin = "0";
+
       const svg = `
       <svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
     <g id="XMLID_468_">
