@@ -138,7 +138,7 @@
       body.style.overflowY = "auto";
       body.style.padding = "10px";
       body.style.backgroundImage =
-        'url("https://dev-engageto.s3.ap-south-1.amazonaws.com/0173161e-5ae6-4229-829c-2420e4e81f3f_12/11/2024%2006:58:52.jpg")';
+        'url("https://dev-engageto.s3.ap-south-1.amazonaws.com/ab66048c-5506-4dd5-b330-9124ee4d4bda_12/11/2024 13:19:52.jpg")';
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
       body.style.opacity = "0.5";
