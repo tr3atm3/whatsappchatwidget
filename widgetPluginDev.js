@@ -16,7 +16,7 @@
       button.style.borderRadius = `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
-      button.style.padding = "10px 20px";
+      button.style.padding = "10px";
       button.style.display = "flex";
       button.style.alignItems = "center";
       button.style.gap = "15px";
@@ -57,7 +57,9 @@
 
       const text = document.createElement("span");
       text.innerText = config.ctaText;
-      button.appendChild(text);
+      if (!isOpen) {
+        button.appendChild(text);
+      }
 
       button.addEventListener("click", () => {
         togglePopup();
