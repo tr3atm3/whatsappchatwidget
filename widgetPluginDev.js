@@ -55,7 +55,7 @@
 `;
 
       icon.innerHTML = svg;
-      button.appendChild(icon);
+      button.appendChild(svg);
 
       const text = document.createElement("span");
       text.innerText = config.ctaText;
@@ -194,7 +194,7 @@
       poweredByIcon.innerHTML = svgPoweredBy;
       const poweredByText = document.createElement("span");
       poweredByText.innerText = "by Engageto";
-      poweredBy.appendChild(poweredByIcon);
+      poweredBy.appendChild(svgPoweredBy);
       poweredBy.appendChild(poweredByText);
       poweredBy.style.margin = "5px";
 
