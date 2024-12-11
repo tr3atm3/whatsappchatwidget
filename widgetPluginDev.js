@@ -25,6 +25,7 @@
       button.style.zIndex = "1000";
       button.style.border = "none";
       button.style.outline = "none";
+      button.style.fontWeight = "600";
 
       const icon = document.createElement("span");
       icon.style.margin = "0";
