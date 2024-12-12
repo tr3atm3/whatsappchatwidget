@@ -16,7 +16,7 @@
       button.style.borderRadius = isOpen ? "100%" : `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
-      button.style.padding = isOpen ? "8px 10px" : "8px 15px";
+      button.style.padding = isOpen ? "12px 15px 13px" : "8px 15px";
       button.style.display = "flex";
       button.style.alignItems = "center";
       button.style.gap = "10px";
