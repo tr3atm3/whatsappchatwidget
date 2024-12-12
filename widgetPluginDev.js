@@ -13,7 +13,7 @@
       button.style.bottom = "20px";
       button.style[config.position === "bottom-left" ? "left" : "right"] =
         "20px";
-      button.style.borderRadius = `${config.borderRadius}px`;
+      button.style.borderRadius = isOpen ? "100%" : `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
       button.style.padding = isOpen ? "8px 10px" : "8px 15px";
