@@ -107,7 +107,8 @@
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
       brandText.style.flexDirection = "column";
-	brandText.style.gap="2px !important"	
+	    brandText.style.setProperty("gap", "2px", "important");
+	
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
@@ -143,7 +144,8 @@
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
       body.style.opacity = "0.5";
-	    body.style.color="#000000 !important"
+	    body.style.setProperty("color", "#000000", "important");
+	    
 
       const messageBubble = document.createElement("div");
       messageBubble.style.backgroundColor = "white";
@@ -200,7 +202,8 @@
       const poweredByText = document.createElement("span");
       poweredByText.style.fontSize = "12px";
       poweredByText.innerText = "by Engageto";
-	    poweredByText.style.color="#000000 !important"
+	     poweredByText.style.setProperty("color", "#000000", "important");
+	    
       poweredBy.appendChild(poweredByIcon);
       poweredBy.appendChild(poweredByText);
       poweredBy.style.margin = "5px";
