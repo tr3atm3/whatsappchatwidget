@@ -80,7 +80,7 @@
       popup.style.borderRadius = "10px";
       popup.style.overflow = "hidden";
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-      popup.style.backgroundColor = "#E5E5E5";
+      popup.style.backgroundColor = "#E5E5E5 !important";
       popup.style.zIndex = "1000";
 
       const header = document.createElement("div");
@@ -107,6 +107,7 @@
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
       brandText.style.flexDirection = "column";
+	brandText.style.gap="2px !important"	
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
@@ -142,6 +143,7 @@
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
       body.style.opacity = "0.5";
+	    body.style.color="#000000 !important"
 
       const messageBubble = document.createElement("div");
       messageBubble.style.backgroundColor = "white";
@@ -198,6 +200,7 @@
       const poweredByText = document.createElement("span");
       poweredByText.style.fontSize = "12px";
       poweredByText.innerText = "by Engageto";
+	    poweredByText.style.color="#000000 !important"
       poweredBy.appendChild(poweredByIcon);
       poweredBy.appendChild(poweredByText);
       poweredBy.style.margin = "5px";
