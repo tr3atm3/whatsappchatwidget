@@ -32,13 +32,13 @@ try {
   var engagetoWidgetOptions = null;
 
   var xhr = new XMLHttpRequest();
-  if(env === "env"){
+  if(env === "development"){
      xhr.open(
     "GET",
     "https://connect.engagetoq.in/api/Widgets/get?id=" + widgetId,
     true
   );
-  }else if(env === "prod"){
+  }else if(env === "production"){
      xhr.open(
     "GET",
     "https://connect.engageto.in/api/Widgets/get?id=" + widgetId,
