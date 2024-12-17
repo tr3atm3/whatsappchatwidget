@@ -80,7 +80,7 @@
       popup.style.borderRadius = "10px";
       popup.style.overflow = "hidden";
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
-      popup.style.backgroundColor = "#E5E5E5 !important";
+      popup.style.setProperty("background-color", "#E5E5E5", "important");
       popup.style.zIndex = "1000";
 
       const header = document.createElement("div");
@@ -107,18 +107,20 @@
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
       brandText.style.flexDirection = "column";
-	    brandText.style.setProperty("gap", "2px", "important");
+	    
 	
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
       brandName.style.fontSize = "14px";
+	    brandName.style.margin= "0px"
       brandText.appendChild(brandName);
 
       const brandSubtitle = document.createElement("span");
       brandSubtitle.innerText = config.brandSubtitle;
       brandSubtitle.style.color = "white";
       brandSubtitle.style.fontSize = "12px";
+	    brandSubtitle.style.margin= "0px"
       brandText.appendChild(brandSubtitle);
 
       brandInfo.appendChild(brandImage);
