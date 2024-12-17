@@ -3,6 +3,9 @@ try {
   const widgetId = document
     .getElementById("engageto-wa-widget")
     .getAttribute("widget-id");
+  const env = document
+    .getElementById("engageto-wa-widget")
+    .getAttribute("env");
   if (!widgetId || widgetId == null) {
     throw new Error("Widget is invalid");
   }
@@ -29,11 +32,20 @@ try {
   var engagetoWidgetOptions = null;
 
   var xhr = new XMLHttpRequest();
-  xhr.open(
+  if(env === "env"){
+     xhr.open(
     "GET",
     "https://connect.engagetoq.in/api/Widgets/get?id=" + widgetId,
     true
   );
+  }else if(env === "prod"){
+     xhr.open(
+    "GET",
+    "https://connect.engageto.in/api/Widgets/get?id=" + widgetId,
+    true
+  );
+  }
+ 
   // xhr.open("GET", "http://localhost:5000/widget-details/" + widgetId, true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send();
