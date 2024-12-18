@@ -89,6 +89,7 @@
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
+      header.style.maxHeight = "100px";
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
@@ -107,20 +108,19 @@
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
       brandText.style.flexDirection = "column";
-	    
-	
+
       const brandName = document.createElement("span");
       brandName.innerText = config.brandName;
       brandName.style.color = "white";
       brandName.style.fontSize = "14px";
-	    brandName.style.margin= "0px"
+      brandName.style.margin = "0px";
       brandText.appendChild(brandName);
 
       const brandSubtitle = document.createElement("span");
       brandSubtitle.innerText = config.brandSubtitle;
       brandSubtitle.style.color = "white";
       brandSubtitle.style.fontSize = "12px";
-	    brandSubtitle.style.margin= "0px"
+      brandSubtitle.style.margin = "0px";
       brandText.appendChild(brandSubtitle);
 
       brandInfo.appendChild(brandImage);
@@ -146,8 +146,7 @@
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
       body.style.opacity = "0.5";
-	    body.style.setProperty("color", "#000000", "important");
-	    
+      body.style.setProperty("color", "#000000", "important");
 
       const messageBubble = document.createElement("div");
       messageBubble.style.backgroundColor = "white";
@@ -204,8 +203,8 @@
       const poweredByText = document.createElement("span");
       poweredByText.style.fontSize = "12px";
       poweredByText.innerText = "by Engageto";
-	     poweredByText.style.setProperty("color", "#000000", "important");
-	    
+      poweredByText.style.setProperty("color", "#000000", "important");
+
       poweredBy.appendChild(poweredByIcon);
       poweredBy.appendChild(poweredByText);
       poweredBy.style.margin = "5px";
