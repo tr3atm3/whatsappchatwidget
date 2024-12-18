@@ -155,6 +155,13 @@
       brandImage.style.borderRadius = "50%";
       brandImage.style.marginRight = "8px";
 
+      const brandNameFirstAlphabet = document.createElement("p");
+      brandNameFirstAlphabet.innerText = config.brandName.slice(0, 1);
+      brandNameFirstAlphabet.style.width = "32px";
+      brandNameFirstAlphabet.style.height = "32px";
+      brandNameFirstAlphabet.style.borderRadius = "50%";
+      brandNameFirstAlphabet.style.marginRight = "8px";
+
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
       brandText.style.flexDirection = "column";
@@ -173,7 +180,11 @@
       brandSubtitle.style.margin = "0px";
       brandText.appendChild(brandSubtitle);
 
-      brandInfo.appendChild(brandImage);
+      if (isSourceDomain?.brandImageUrl || config.brandImageUrl) {
+        brandInfo.appendChild(brandImage);
+      } else {
+        brandInfo.appendChild(brandNameFirstAlphabet);
+      }
       brandInfo.appendChild(brandText);
 
       const closeButton = document.createElement("button");
