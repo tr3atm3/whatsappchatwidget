@@ -22,6 +22,7 @@
       messageBox.innerText = isSourceDomain?.id
         ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
         : config.defaultOnScreenMessage;
+      messageBox.style.padding = "4px";
       messageBox.style.backgroundColor = "#ffffff";
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
