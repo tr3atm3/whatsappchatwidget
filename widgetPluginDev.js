@@ -161,6 +161,7 @@
       brandNameFirstAlphabet.style.height = "32px";
       brandNameFirstAlphabet.style.borderRadius = "50%";
       brandNameFirstAlphabet.style.marginRight = "8px";
+      brandNameFirstAlphabet.style.backgroundColor = `#ece75f`;
 
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
