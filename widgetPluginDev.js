@@ -89,7 +89,7 @@
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
-      header.style.lineHeight = "0px";
+      header.style.lineHeight = "2px";
       
 
       const brandInfo = document.createElement("div");
