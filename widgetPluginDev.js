@@ -109,7 +109,7 @@
       const imageUrl = isSourceDomain?.id
         ? isSourceDomain?.brandImageUrl || config.brandImageUrl || ""
         : config.brandImageUrl || "";
-      brandImage.src = `${imageUrl}?cacheBust=${Date.now()}`;
+      brandImage.src = `${imageUrl}`;
       brandImage.alt = config.brandName || "Brand Logo";
       brandImage.style.width = "32px";
       brandImage.style.height = "32px";
@@ -152,7 +152,7 @@
       body.style.height = "200px";
       body.style.overflowY = "auto";
       body.style.padding = "10px";
-      body.style.backgroundImage = `url("https://dev-engageto.s3.ap-south-1.amazonaws.com/ab66048c-5506-4dd5-b330-9124ee4d4bda_12/11/2024 13:19:52.jpg?cacheBust=${Date.now()}")`;
+      body.style.backgroundImage = `url("https://dev-engageto.s3.ap-south-1.amazonaws.com/ab66048c-5506-4dd5-b330-9124ee4d4bda_12/11/2024 13:19:52.jpg?cacheBust=${Date.now()")`;
 
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
