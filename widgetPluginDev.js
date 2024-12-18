@@ -34,6 +34,15 @@
     button.style.boxShadow = "0px 6px 8px rgba(0, 0, 0, 0.2)";
   });
 
+
+  // Hover effect to make shadow darker
+  button.addEventListener("mouseenter", () => {
+    button.style.boxShadow = "0px 6px 8px rgba(0, 0, 0, 0.2)";
+  });
+
+  button.addEventListener("mouseleave", () => {
+    button.style.boxShadow = "0px";
+  });
   
 
       const icon = document.createElement("span");
