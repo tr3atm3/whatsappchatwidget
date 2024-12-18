@@ -26,17 +26,7 @@
       button.style.border = "none";
       button.style.outline = "none";
       button.style.fontWeight = "600";
-	
-  button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
-
-  button.addEventListener("mouseenter", () => {
-    button.style.boxShadow = "0px 6px 8px rgba(0, 0, 0, 0.2)";
-  });
-
-  button.addEventListener("mouseleave", () => {
-    button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-  });
       const icon = document.createElement("span");
       icon.style.margin = "0";
 
@@ -99,7 +89,7 @@
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
-      header.style.lineHeight = "16px";
+      header.style.lineHeight = "0px";
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
@@ -109,7 +99,7 @@
       const imageUrl = isSourceDomain?.id
         ? isSourceDomain?.brandImageUrl || config.brandImageUrl || ""
         : config.brandImageUrl || "";
-      brandImage.src = `${imageUrl}`;
+      brandImage.src = `${imageUrl}?cacheBust=${Date.now()}`;
       brandImage.alt = config.brandName || "Brand Logo";
       brandImage.style.width = "32px";
       brandImage.style.height = "32px";
@@ -152,7 +142,7 @@
       body.style.height = "200px";
       body.style.overflowY = "auto";
       body.style.padding = "10px";
-      body.style.backgroundImage = `url("https://dev-engageto.s3.ap-south-1.amazonaws.com/ab66048c-5506-4dd5-b330-9124ee4d4bda_12/11/2024 13:19:52.jpg?cacheBust=${Date.now()")`;
+      body.style.backgroundImage = `url("https://dev-engageto.s3.ap-south-1.amazonaws.com/ab66048c-5506-4dd5-b330-9124ee4d4bda_12/11/2024 13:19:52.jpg?cacheBust=${Date.now()}")`;
 
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
