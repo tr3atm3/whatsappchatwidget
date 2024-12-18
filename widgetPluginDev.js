@@ -139,6 +139,7 @@
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
       header.style.lineHeight = "16px";
+      header.style.maxHeight = "70px";
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
