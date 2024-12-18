@@ -85,7 +85,7 @@
 
       const header = document.createElement("div");
       header.style.display = "flex";
-      header.style.alignItems = "center";
+      header.style.alignItems = "end";
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
