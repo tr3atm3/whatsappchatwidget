@@ -161,6 +161,8 @@
       brandNameFirstAlphabet.style.width = "32px";
       brandNameFirstAlphabet.style.height = "32px";
       brandNameFirstAlphabet.style.borderRadius = "50%";
+
+      brandNameFirstAlphabet.style.margin = "0px";
       brandNameFirstAlphabet.style.marginRight = "8px";
       brandNameFirstAlphabet.style.backgroundColor = `#ece75f`;
       brandNameFirstAlphabet.style.display = "flex";
