@@ -85,11 +85,12 @@
 
       const header = document.createElement("div");
       header.style.display = "flex";
-      header.style.alignItems = "end";
+      header.style.alignItems = "center";
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
-      header.style.maxHeight = "100px";
+      header.style.lineHeight = "0px";
+      
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
