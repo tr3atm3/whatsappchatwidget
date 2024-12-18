@@ -10,18 +10,20 @@
     const createButton = () => {
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
-      mainContainer.style.gap = "4px";
+      mainContainer.style.gap = "8px";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
       mainContainer.style[
         config.position === "bottom-left" ? "left" : "right"
       ] = "20px";
+      mainContainer.style.alignItems = " center";
 
       const messageBox = document.createElement("p");
       messageBox.innerText = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
-          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
-        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
+        ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
+        : config.defaultOnScreenMessage;
+      messageBox.style.backgroundColor = "#ffffff";
+      messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       const button = document.createElement("button");
 
@@ -38,6 +40,16 @@
       button.style.border = "none";
       button.style.outline = "none";
       button.style.fontWeight = "600";
+
+      button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+
+      button.addEventListener("mouseenter", () => {
+        button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
+      });
+
+      button.addEventListener("mouseleave", () => {
+        button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+      });
 
       const icon = document.createElement("span");
       icon.style.margin = "0";
