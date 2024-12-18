@@ -195,7 +195,7 @@
 
       body.style.backgroundSize = "cover";
       body.style.backgroundBlendMode = "multiply";
-      body.style.opacity = "0.5";
+      body.style.opacity = "0.8";
       body.style.setProperty("color", "#000000", "important");
 
       const messageBubble = document.createElement("div");
