@@ -13,6 +13,12 @@
       mainContainer.style.gap = "8px";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
+      mainContainer.style.marginLeft = config.marginLeft
+        ? `${config.marginLeft}px`
+        : "0px";
+      mainContainer.style.marginRight = config.marginRight
+        ? `${config.marginRight}px`
+        : "0px";
       mainContainer.style[
         config.position === "bottom-left" ? "left" : "right"
       ] = "20px";
@@ -23,7 +29,7 @@
         ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
         : config.defaultOnScreenMessage;
       messageBox.style.padding = "4px";
-      messageBox.style.backgroundColor = "#ffffff";
+      messageBox.style.backgroundColor = "#ffffff !important";
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       const button = document.createElement("button");
@@ -112,6 +118,12 @@
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
       popup.style.setProperty("background-color", "#E5E5E5", "important");
       popup.style.zIndex = "1000";
+      popup.style.marginLeft = config.marginLeft
+        ? `${config.marginLeft}px`
+        : "0px";
+      popup.style.marginRight = config.marginRight
+        ? `${config.marginRight}px`
+        : "0px";
 
       const header = document.createElement("div");
       header.style.display = "flex";
