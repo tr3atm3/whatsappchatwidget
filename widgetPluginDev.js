@@ -26,6 +26,7 @@
       button.style.border = "none";
       button.style.outline = "none";
       button.style.fontWeight = "600";
+	    button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       const icon = document.createElement("span");
       icon.style.margin = "0";
