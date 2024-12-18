@@ -8,6 +8,16 @@
     )[0];
 
     const createButton = () => {
+      const mainContainer = document.createElement("div");
+      mainContainer.style.display = "flex";
+      mainContainer.style.gap = "4px";
+
+      const messageBox = document.createElement("p");
+      messageBox.innerText = isSourceDomain?.id
+        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
+          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
+        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
+
       const button = document.createElement("button");
       button.style.position = "fixed";
       button.style.bottom = "20px";
@@ -26,17 +36,6 @@
       button.style.border = "none";
       button.style.outline = "none";
       button.style.fontWeight = "600";
-	     
-  button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-
- 
-  button.addEventListener("mouseenter", () => {
-    button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.2)";
-  });
-
-  button.addEventListener("mouseleave", () => {
-    button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-  });
 
       const icon = document.createElement("span");
       icon.style.margin = "0";
@@ -78,7 +77,9 @@
         togglePopup();
         clearTimeout(toggleChatPopupTimer);
       });
-      return button;
+      mainContainer.appendChild(messageBox);
+      mainContainer.appendChild(button);
+      return mainContainer;
     };
 
     const createPopup = () => {
@@ -100,7 +101,7 @@
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
-      header.style.lineHeight = "16px";
+      header.style.lineHeight = "0px";
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
