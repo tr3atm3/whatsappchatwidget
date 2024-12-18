@@ -162,6 +162,11 @@
       brandNameFirstAlphabet.style.borderRadius = "50%";
       brandNameFirstAlphabet.style.marginRight = "8px";
       brandNameFirstAlphabet.style.backgroundColor = `#ece75f`;
+      brandNameFirstAlphabet.style.display = "flex";
+      brandNameFirstAlphabet.style.alignItems = "center";
+      brandNameFirstAlphabet.style.justifyContent = "center";
+      brandNameFirstAlphabet.style.fontWeight = "bold";
+      brandNameFirstAlphabet.style.lineHeight = "20px";
 
       const brandText = document.createElement("div");
       brandText.style.display = "flex";
