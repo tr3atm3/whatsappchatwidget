@@ -11,6 +11,11 @@
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
       mainContainer.style.gap = "4px";
+      mainContainer.style.position = "fixed";
+      mainContainer.style.bottom = "20px";
+      mainContainer.style[
+        config.position === "bottom-left" ? "left" : "right"
+      ] = "20px";
 
       const messageBox = document.createElement("p");
       messageBox.innerText = isSourceDomain?.id
@@ -19,10 +24,7 @@
         : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
 
       const button = document.createElement("button");
-      button.style.position = "fixed";
-      button.style.bottom = "20px";
-      button.style[config.position === "bottom-left" ? "left" : "right"] =
-        "20px";
+
       button.style.borderRadius = isOpen ? "100%" : `${config.borderRadius}px`;
       button.style.backgroundColor = config.buttonBackground;
       button.style.color = "white";
@@ -77,7 +79,10 @@
         togglePopup();
         clearTimeout(toggleChatPopupTimer);
       });
-      mainContainer.appendChild(messageBox);
+      if (!isOpen) {
+        mainContainer.appendChild(messageBox);
+      }
+
       mainContainer.appendChild(button);
       return mainContainer;
     };
@@ -101,7 +106,7 @@
       header.style.justifyContent = "space-between";
       header.style.padding = "10px";
       header.style.backgroundColor = config.brandColor;
-      header.style.lineHeight = "0px";
+      header.style.lineHeight = "16px";
 
       const brandInfo = document.createElement("div");
       brandInfo.style.display = "flex";
