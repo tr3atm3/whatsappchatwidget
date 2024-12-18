@@ -11,6 +11,7 @@
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
       mainContainer.style.gap = "8px";
+      mainContainer.style.alignItems = " center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
       mainContainer.style.marginLeft = config.marginLeft
@@ -22,7 +23,10 @@
       mainContainer.style[
         config.position === "bottom-left" ? "left" : "right"
       ] = "20px";
-      mainContainer.style.alignItems = " center";
+
+      mainContainer.style.marginBottom = config.marginBottom
+        ? `${config.marginBottom}px`
+        : "0px";
 
       const messageBox = document.createElement("p");
       messageBox.innerText = isSourceDomain?.id
@@ -123,6 +127,9 @@
         : "0px";
       popup.style.marginRight = config.marginRight
         ? `${config.marginRight}px`
+        : "0px";
+      popup.style.marginBottom = config.marginBottom
+        ? `${config.marginBottom}px`
         : "0px";
 
       const header = document.createElement("div");
