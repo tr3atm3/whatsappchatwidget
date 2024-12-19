@@ -33,7 +33,7 @@
         ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
         : config.defaultOnScreenMessage;
       messageBox.style.padding = "4px";
-      messageBox.style.backgroundColor = "#ffffff !important";
+      messageBox.style.setProperty("background-color", "#ffffff", "important");
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       const button = document.createElement("button");
@@ -226,9 +226,8 @@
 
       const message = document.createElement("span");
       message.innerHTML = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
-          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
-        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
+        ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
+        : config.defaultOnScreenMessage;
       messageBubble.appendChild(message);
 
       body.appendChild(messageBubble);
