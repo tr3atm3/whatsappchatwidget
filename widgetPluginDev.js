@@ -226,8 +226,9 @@
 
       const message = document.createElement("span");
       message.innerHTML = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
-        : config.defaultOnScreenMessage;
+        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
+          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
+        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
       messageBubble.appendChild(message);
 
       body.appendChild(messageBubble);
