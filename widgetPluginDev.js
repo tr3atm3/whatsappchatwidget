@@ -10,7 +10,7 @@
     const createButton = () => {
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
-      mainContainer.style.gap = "8px";
+      mainContainer.style.gap = "10px";
       mainContainer.style.alignItems = "center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
@@ -45,15 +45,13 @@
       const triangle = document.createElement("span");
       triangle.style.content = "''";
       triangle.style.position = "absolute";
-      triangle.style.top = "50%"; // Align vertically at the center
-      triangle.style.right = "-8px"; // Position it outside the box to the right
-      triangle.style.transform = "translateY(-50%)"; // Center it vertically
-
+      triangle.style.top = "10px";
+      triangle.style.right = "-8px";
       triangle.style.width = "0";
       triangle.style.height = "0";
-      triangle.style.borderTop = "8px solid transparent"; // Invisible top side
-      triangle.style.borderBottom = "8px solid transparent"; // Invisible bottom side
-      triangle.style.borderLeft = "8px solid #000000"; // Same color as the messageBox background
+      triangle.style.borderTop = "8px solid transparent";
+      triangle.style.borderBottom = "8px solid transparent";
+      triangle.style.borderLeft = "8px solid #000000";
       triangle.style.setProperty("border-color", "#000000", "important");
 
       messageBox.appendChild(triangle);
