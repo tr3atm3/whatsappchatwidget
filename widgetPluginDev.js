@@ -34,7 +34,9 @@
         : config.defaultOnScreenMessage;
       messageBox.style.position = "relative"; // Add relative positioning for the triangle
       messageBox.style.padding = "8px 12px";
-      messageBox.style.backgroundColor = "#ffffff";
+	     messageBox.style.setProperty("background-color", "#000000", "important");
+	     messageBox.style.setProperty("color", "#ffffff", "important");
+	    
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
       messageBox.style.borderRadius = "6px";
       messageBox.style.fontSize = "14px";
@@ -50,6 +52,7 @@
       triangle.style.borderLeft = "8px solid transparent"; // Invisible left side
       triangle.style.borderRight = "8px solid transparent"; // Invisible right side
       triangle.style.borderTop = "8px solid #ffffff"; // Same color as the messageBox background
+	     messageBox.style.setProperty("background-color", "#000000", "important");
 
       messageBox.appendChild(triangle);
 
