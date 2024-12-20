@@ -45,14 +45,16 @@
       const triangle = document.createElement("span");
       triangle.style.content = "''";
       triangle.style.position = "absolute";
-      triangle.style.bottom = "-8px"; // Position the triangle below the box
-      triangle.style.right = "0"; // Align triangle with the right edge of the message box
+      triangle.style.top = "50%"; // Align vertically at the center
+      triangle.style.right = "-8px"; // Position it outside the box to the right
+      triangle.style.transform = "translateY(-50%)"; // Center it vertically
+
       triangle.style.width = "0";
       triangle.style.height = "0";
-      triangle.style.borderLeft = "8px solid transparent"; // Invisible left side
-      triangle.style.borderRight = "8px solid transparent"; // Invisible right side
-      triangle.style.borderTop = "8px solid #ffffff"; // Same color as the messageBox background
-      messageBox.style.setProperty("background-color", "#000000", "important");
+      triangle.style.borderTop = "8px solid transparent"; // Invisible top side
+      triangle.style.borderBottom = "8px solid transparent"; // Invisible bottom side
+      triangle.style.borderLeft = "8px solid #000000"; // Same color as the messageBox background
+      triangle.style.setProperty("border-color", "#000000", "important");
 
       messageBox.appendChild(triangle);
 
