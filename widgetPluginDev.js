@@ -37,7 +37,7 @@
       messageBox.style.padding = "8px 12px";
       messageBox.style.setProperty("background-color", "#ffffff", "important");
       messageBox.style.setProperty("color", "#000000", "important");
-
+      messageBox.style.margin = "0px";
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
       messageBox.style.borderRadius = "6px";
       messageBox.style.fontSize = "14px";
