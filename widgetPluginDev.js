@@ -51,8 +51,8 @@
       triangle.style.height = "0";
       triangle.style.borderTop = "8px solid transparent";
       triangle.style.borderBottom = "8px solid transparent";
-      triangle.style.borderRight = "8px solid #000000";
-      triangle.style.setProperty("border-color", "#000000", "important");
+      triangle.style.borderLeft = "8px solid #000000";
+     
 
       messageBox.appendChild(triangle);
 
