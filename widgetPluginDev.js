@@ -11,7 +11,7 @@
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
       mainContainer.style.gap = "10px";
-      mainContainer.style.alignItems = "center";
+      mainContainer.style.alignItems = "end";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
       mainContainer.style.marginLeft = config.marginLeft
@@ -30,18 +30,19 @@
 
       const messageBox = document.createElement("p");
       messageBox.innerText = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage || config.defaultOnScreenMessage
-        : config.defaultOnScreenMessage;
-      messageBox.style.position = "relative"; // Add relative positioning for the triangle
+        ? isSourceDomain?.onScreenMessage.trim() ||
+          config.defaultOnScreenMessage.trim()
+        : config.defaultOnScreenMessage.trim();
+      messageBox.style.position = "relative";
       messageBox.style.padding = "8px 12px";
-      messageBox.style.setProperty("background-color", "#000000", "important");
-      messageBox.style.setProperty("color", "#ffffff", "important");
+      messageBox.style.setProperty("background-color", "#ffffff", "important");
+      messageBox.style.setProperty("color", "#000000", "important");
 
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
       messageBox.style.borderRadius = "6px";
       messageBox.style.fontSize = "14px";
+      messageBox.style.lineHeight = "16px";
 
-      // Create a triangle using ::after
       const triangle = document.createElement("span");
       triangle.style.content = "''";
       triangle.style.position = "absolute";
@@ -51,8 +52,8 @@
       triangle.style.height = "0";
       triangle.style.borderTop = "8px solid transparent";
       triangle.style.borderBottom = "8px solid transparent";
-      triangle.style.borderLeft = "8px solid #000000";
-     
+      triangle.style.borderLeft = "8px solid #ffffff";
+      triangle.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       messageBox.appendChild(triangle);
 
@@ -246,11 +247,10 @@
 
       const message = document.createElement("span");
       message.innerHTML = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
-          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
-        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
+        ? isSourceDomain?.onScreenMessage.trim().replace(/\n/g, "<br>") ||
+          config.defaultOnScreenMessage.trim().replace(/\n/g, "<br>")
+        : config.defaultOnScreenMessage.trim().replace(/\n/g, "<br>");
       messageBubble.appendChild(message);
-
       body.appendChild(messageBubble);
 
       const footer = document.createElement("div");
