@@ -45,13 +45,13 @@
       const triangle = document.createElement("span");
       triangle.style.content = "''";
       triangle.style.position = "absolute";
-      triangle.style.bottom = "-8px"; // Adjust position based on your preference
-      triangle.style.left = "16px"; // Centered under the box or adjust as needed
+      triangle.style.top = "0"; // Adjust position based on your preference
+      triangle.style.right = "-8px"; // Centered under the box or adjust as needed
       triangle.style.width = "0";
       triangle.style.height = "0";
       triangle.style.borderLeft = "8px solid transparent";
       triangle.style.borderRight = "8px solid transparent";
-      triangle.style.borderTop = "8px solid #ffffff"; // Same color as the messageBox background
+      triangle.style.borderTop = "8px solid #000000"; // Same color as the messageBox background
 
       messageBox.appendChild(triangle);
 
