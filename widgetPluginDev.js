@@ -11,7 +11,7 @@
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
       mainContainer.style.gap = "10px";
-      mainContainer.style.alignItems = "end";
+      mainContainer.style.alignItems = "center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
       mainContainer.style.marginLeft = config.marginLeft
