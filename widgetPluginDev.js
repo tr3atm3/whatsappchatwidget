@@ -11,7 +11,7 @@
       const mainContainer = document.createElement("div");
       mainContainer.style.display = "flex";
       mainContainer.style.gap = "8px";
-      mainContainer.style.alignItems = "center";
+      mainContainer.style.alignItems = " center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
       mainContainer.style.marginLeft = config.marginLeft
@@ -33,27 +33,29 @@
         ? isSourceDomain?.onScreenMessage.trim() ||
           config.defaultOnScreenMessage.trim()
         : config.defaultOnScreenMessage.trim();
-      messageBox.style.position = "relative"; // Add relative positioning for the triangle
-      messageBox.style.padding = "8px 12px";
+      messageBox.style.padding = "4px 6px";
       messageBox.style.setProperty("background-color", "#ffffff", "important");
-	 messageBox.style.setProperty("color", "#000000", "important");
+      messageBox.style.setProperty("color", "#000000", "important");
+      messageBox.style.position = "relative";
+      messageBox.style.borderRadius = "8px";
+      messageBox.style.padding = "8px";
       messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-      messageBox.style.borderRadius = "6px";
-      messageBox.style.fontSize = "14px";
-
-      // Create a triangle using ::after
-      const triangle = document.createElement("span");
-      triangle.style.content = "''";
-      triangle.style.position = "absolute";
-      triangle.style.top = "0"; // Adjust position based on your preference
-      triangle.style.right = "-8px"; // Centered under the box or adjust as needed
-      triangle.style.width = "0";
-      triangle.style.height = "0";
-      triangle.style.borderLeft = "8px solid transparent";
-      triangle.style.borderRight = "8px solid transparent";
-      triangle.style.borderTop = "8px solid #000000"; // Same color as the messageBox background
-
-      messageBox.appendChild(triangle);
+      messageBox.style.setProperty("content", '""');
+      messageBox.style.setProperty(
+        "::after",
+        `
+  position: absolute;
+  top: 50%;
+  right: -10px; 
+  transform: translateY(-50%); 
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #000000;
+  content: "";
+`
+      );
 
       const button = document.createElement("button");
 
@@ -70,6 +72,7 @@
       button.style.border = "none";
       button.style.outline = "none";
       button.style.fontWeight = "600";
+
       button.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       button.addEventListener("mouseenter", () => {
@@ -83,7 +86,7 @@
       const icon = document.createElement("span");
       icon.style.margin = "0";
 
-         const svg = `
+      const svg = `
       <svg fill="#ffffff" height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve">
     <g id="XMLID_468_">
         <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
@@ -120,7 +123,6 @@
         togglePopup();
         clearTimeout(toggleChatPopupTimer);
       });
-
       if (!isOpen) {
         mainContainer.appendChild(messageBox);
       }
@@ -245,9 +247,9 @@
 
       const message = document.createElement("span");
       message.innerHTML = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.replace(/\n/g, "<br>") ||
-          config.defaultOnScreenMessage.replace(/\n/g, "<br>")
-        : config.defaultOnScreenMessage.replace(/\n/g, "<br>");
+        ? isSourceDomain?.onScreenMessage.trim().replace(/\n/g, "<br>") ||
+          config.defaultOnScreenMessage.trim().replace(/\n/g, "<br>")
+        : config.defaultOnScreenMessage.trim().replace(/\n/g, "<br>");
       messageBubble.appendChild(message);
 
       body.appendChild(messageBubble);
