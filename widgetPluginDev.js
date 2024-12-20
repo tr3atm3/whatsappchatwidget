@@ -14,6 +14,7 @@
       mainContainer.style.alignItems = " center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
+      mainContainer.style.position = "relative";
       mainContainer.style.marginLeft = config.marginLeft
         ? `${config.marginLeft}px`
         : "0px";
@@ -27,21 +28,8 @@
       mainContainer.style.marginBottom = config.marginBottom
         ? `${config.marginBottom}px`
         : "0px";
-
-      const messageBox = document.createElement("p");
-      messageBox.innerText = isSourceDomain?.id
-        ? isSourceDomain?.onScreenMessage.trim() ||
-          config.defaultOnScreenMessage.trim()
-        : config.defaultOnScreenMessage.trim();
-      messageBox.style.padding = "4px 6px";
-      messageBox.style.setProperty("background-color", "#ffffff", "important");
-      messageBox.style.setProperty("color", "#000000", "important");
-      messageBox.style.position = "relative";
-      messageBox.style.borderRadius = "8px";
-      messageBox.style.padding = "8px";
-      messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
-      messageBox.style.setProperty("content", '""');
-      messageBox.style.setProperty(
+      mainContainer.style.setProperty("content", '""');
+      mainContainer.style.setProperty(
         "::after",
         `
   position: absolute;
@@ -56,6 +44,19 @@
   content: "";
 `
       );
+
+      const messageBox = document.createElement("p");
+      messageBox.innerText = isSourceDomain?.id
+        ? isSourceDomain?.onScreenMessage.trim() ||
+          config.defaultOnScreenMessage.trim()
+        : config.defaultOnScreenMessage.trim();
+      messageBox.style.padding = "4px 6px";
+      messageBox.style.setProperty("background-color", "#ffffff", "important");
+      messageBox.style.setProperty("color", "#000000", "important");
+
+      messageBox.style.borderRadius = "8px";
+      messageBox.style.padding = "8px";
+      messageBox.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
 
       const button = document.createElement("button");
 
