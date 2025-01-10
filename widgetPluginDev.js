@@ -1,7 +1,9 @@
 (function () {
   function CreateWhatsAppButtonAndWidget(config) {
     let isOpen = false;
-
+    const isPoweredByVisible = document
+      .getElementById("engageto-wa-widget")
+      .getAttribute("isPoweredVisible");
     const currentDomain = window.location.href;
     const isSourceDomain = config.urlFields.filter((url) =>
       url.sourceUrl.includes(currentDomain)
@@ -300,7 +302,9 @@
       poweredBy.style.margin = "5px";
 
       footer.appendChild(startButton);
-      footer.appendChild(poweredBy);
+      if (isPoweredByVisible) {
+        footer.appendChild(poweredBy);
+      }
 
       popup.appendChild(header);
       popup.appendChild(body);
