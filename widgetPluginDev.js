@@ -302,7 +302,7 @@
       poweredBy.style.margin = "5px";
 
       footer.appendChild(startButton);
-      if (isPoweredByVisible) {
+      if (isPoweredByVisible === "true") {
         footer.appendChild(poweredBy);
       }
 
