@@ -49,17 +49,17 @@ try {
   xhr.onload = function () {
     if (this.status === 200) {
       var data = JSON.parse(this.responseText);
-      console.log(data);
+      
       if (data.phoneNumber) {
         engagetoWidgetOptions = data;
-        console.log(engagetoWidgetOptions);
+        
       } else {
         // Req successful but empty data is returned
         throw new Error("Invalid widget details");
       }
 
       s.onload = function () {
-        console.log("Loaded script");
+        
 
         if (engagetoWidgetOptions != null) {
           window.CreateWhatsAppButtonAndWidget(engagetoWidgetOptions);
