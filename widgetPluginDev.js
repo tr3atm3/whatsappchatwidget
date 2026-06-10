@@ -317,10 +317,11 @@
       isOpen = !isOpen;
       render();
     };
-    var toggleChatPopupTimer = setTimeout(() => {
-      togglePopup();
-    }, 5000);
-
+	if(config?.openWidgetByDefault){	
+    	var toggleChatPopupTimer = setTimeout(() => {
+      	togglePopup();
+    	}, 5000);
+	}
     const render = () => {
       const existingButton = document.getElementById("chat-popup-button");
       const existingPopup = document.getElementById("chat-popup");
