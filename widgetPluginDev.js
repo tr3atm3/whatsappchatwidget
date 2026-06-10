@@ -16,6 +16,7 @@
       mainContainer.style.alignItems = "center";
       mainContainer.style.position = "fixed";
       mainContainer.style.bottom = "20px";
+      mainContainer.style.zIndex = "2147483647";
       mainContainer.style.marginLeft = config.marginLeft
         ? `${config.marginLeft}px`
         : "0px";
@@ -144,7 +145,7 @@
       popup.style.overflow = "hidden";
       popup.style.boxShadow = "0 4px 8px rgba(0,0,0,0.1)";
       popup.style.setProperty("background-color", "#E5E5E5", "important");
-      popup.style.zIndex = "1000";
+      popup.style.zIndex = "2147483646";
       popup.style.marginLeft = config.marginLeft
         ? `${config.marginLeft}px`
         : "0px";
