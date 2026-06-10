@@ -317,7 +317,7 @@
       isOpen = !isOpen;
       render();
     };
-	if(config?.openWidgetByDefault){	
+	if(config?.openWidgetByDefault == "yes"){	
     	var toggleChatPopupTimer = setTimeout(() => {
       	togglePopup();
     	}, 5000);
