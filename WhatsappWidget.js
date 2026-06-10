@@ -32,7 +32,7 @@ try {
   if (env === "development") {
     xhr.open(
       "GET",
-      "https://connect.engagetoq.in/api/Widgets/get?id=" + widgetId,
+      "https://connect.engagetod.in/api/Widgets/get?id=" + widgetId,
       true
     );
   } else if (env === "production") {
