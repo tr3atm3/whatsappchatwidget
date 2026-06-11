@@ -271,7 +271,7 @@
       startButton.style.cursor = "pointer";
       startButton.addEventListener("click", () => {
         window.open(
-          `https://api.whatsapp.com/send?phone=${config.phoneNumber}&text=${
+          `https://wa.me/${config.phoneNumber}?text=${
             isSourceDomain
               ? isSourceDomain?.preFilledMessage || config.defaultMessage
               : config.defaultMessage
