@@ -126,7 +126,7 @@
         clearTimeout(toggleChatPopupTimer);
       });
 
-      if (!isOpen) {
+      if (!isOpen && config.showGreetings == "yes") {
         mainContainer.appendChild(messageBox);
       }
 
