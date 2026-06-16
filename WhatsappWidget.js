@@ -10,7 +10,7 @@ try {
  
   const s = document.createElement("script");
    // s.src = "https://engageto-dev.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui_1781161990.js";
-  s.src = "https://engageto-prd.s3.ap-south-1.amazonaws.com/whatsapp-widget-ui_1781162349.js";
+  s.src = "https://links.engagetod.in/whatsapp-widget-ui_1781609706.js";
   s.type = "text/javascript";
   s.async = true;
   s.id = "df-script";
